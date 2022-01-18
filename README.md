@@ -49,9 +49,9 @@ initialize two global variables cmd and pub
 function main()
   initialize node
   
-  sub1= define subscriber to /automatic/cmd_vel that executes auto_vel_callback
-  sub2= define subscriber to /manual/cmd_vel that executes man_vel_callback
-  sub3= define subscriber to /assisted/cmd_vel that executes ass_vel_callback
+  sub1= define subscriber to /automatic/cmd_vel that executes callback_1
+  sub2= define subscriber to /manual/cmd_vel that executes callback_2
+  sub3= define subscriber to /assisted/cmd_vel that executes callback_3
   
   pub= define publisher to /cmd_vel
   
@@ -76,18 +76,18 @@ function main()
 end function
 ```
 
-##### callbacks:
 The callbacks executed by the subscribers are similar: they get the message that was published on the topic they refer to and pusblish it on **_/cmd_vel_**
 only when the corresponding driving mode was selected.
+##### callbacks:
 ```
-function callback(msg)
+function callback_i(msg)
   if (cmd == mode i)
     make pub publish msg on /cmd_vel
   end if
 end function
 ```
 
-The logic behind the loops executed after the selection of the three driving modes is the following.
+Moreover, the logic behind the loops executed after the selection of the three driving modes is the following.
 ##### automatic mode loop:
 ```
 initialize nav_cmd to navigate in the sub menu
