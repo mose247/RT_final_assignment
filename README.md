@@ -61,17 +61,19 @@ function main()
   while (1)
     print user interface
     cmd= get input from stdin
-      if (cmd == 1)
-        execute automatic mode loop
-      else if (cmd == 2)
-        execute manual mode loop
-      else if (cmd == 3)
-        execute assisted mode loop
-      else if (cmd == 'q')
-        exit from the infinite loop and quit the node
-      else
-        invalid command error
-      end if
+    
+    if (cmd == 1)
+      execute automatic mode loop
+    else if (cmd == 2)
+      execute manual mode loop
+    else if (cmd == 3)
+      execute assisted mode loop
+    else if (cmd == 'q')
+      exit from the infinite loop and quit the node
+    else
+      invalid command error
+    end if
+    
   end while
 end function
 ```
