@@ -141,7 +141,7 @@ function main()
   spin to execute continuosly the callbacks
 end function
 ```
-
+The two callback function are very simple, here it is the pseudo-code that describes them.
 ```
 function callback_1(msg)
   regions= divide the ranges vector in 5 sections and get the minimum per each
@@ -155,6 +155,7 @@ function callback_2(msg)
 end function
 ```
 
+The real logic of the node is implemented by the utility function _avoid_collision_, which is in charge of updating the input velocity, when necessary, every time that a new LaserScan message is published on the **_/scan_** topic. Its pseudo-code is the following:
 ```
 function avoid_collision(regions)
   lin= get linear component from ass_vel
@@ -162,44 +163,56 @@ function avoid_collision(regions)
   
   if (no obstacle detected)
     do nothing
+    
   else if (obstacle in the front)
     if (the user want to go straight)
       lin= 0
       ang= 0
     end if
+    
   else if (obstacle in the front-right)
     if (the user want to turn front-right)
       lin= 0
       ang= 0
     end if
+    
   else if (obstacle in the front-left)
     if (the user want to turn front-left)
       lin= 0
       ang= 0
     end if
+    
   else if (obstacle in the front and front-right)
     if (the user want to go straight or turn front-right)
       lin= 0
       ang= 0
     end if
+    
   else if (obstacle in the front and front-left)
     if (the user want to go straight or turn front-left)
       lin= 0
       ang= 0
     end if
+    
   else if (obstacle in the front, front-right and front-left)
     if (the user want to go straight, turn front-right or front-left)
       lin= 0
       ang= 0
     end if
+    
   else if ((obstacle in the front-right and front-left)
     if (the user want to turn front-right or front-left)
       lin= 0
       ang= 0
     end if
+    
   else
     unknown case
   end if
+  
+  set the linear component of ass_vel to lin
+  set the angular component of ass_vel to ang
+  publish ass_vel on /assisted/cmd_vel
   
 end function
 ```
