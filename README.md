@@ -42,4 +42,41 @@ As it can be noticed from the previous paragraph, this node is the core of the u
 
 Moreover, it is declared a publisher to the **_/cmd_vel_** topic and an action client to tell the node **_move_base_** the goal to be reached when the automatic mode has been selected.
 
-#### Pseudo-code:
+#### main() pseudo-code:
+```
+initialize two global variables cmd and pub
+
+function main()
+  initialize node
+  
+  sub1= define subscriber to /automatic/cmd_vel
+  sub2= define subscriber to /manual/cmd_vel
+  sub3= define subscriber to /assisted/cmd_vel
+  
+  pub= define publisher to /cmd_vel
+  
+  client= define action client for MoveBasicAction
+  set the parameters of the action message that remain constant
+  
+  while (1)
+    print user interface
+    cmd= get input from stdin
+      if (cmd == 1)
+        execute automatic mode loop
+      else if (cmd == 2)
+        execute manual mode loop
+      else if (cmd == 3)
+        execute assisted mode loop
+      else if (cmd == 'q')
+        exit from the infinite loop and quit the node
+      else
+        invalid command error
+      end if
+  end while
+end function
+```
+
+The logic behind the loops executed after the selection of the three driving modes is the following:
+######
+```
+```
