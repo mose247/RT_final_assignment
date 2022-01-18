@@ -95,3 +95,15 @@ end while
 
 publish a null velocity on /cmd_vel to stop the robot
 ```
+
+##### manual/assisted mode loop:
+The two loops executed in correspondence of the manual or assisted mode are even simpler: they consists in a busy waiting during which the user can insert commands through the **_teleop_** node to move the robot.
+```
+initialize nav_cmd to navigate in the sub menu
+
+while (nav_cmd is not 'b')
+    nav_cmd= get input from stdin
+end while
+
+publish a null velocity on /cmd_vel to stop the robot
+```
