@@ -35,3 +35,4 @@ Then, the **_user_interface_** node, that is subscribed to each of the topics ab
 
 
 ## user_interface node
+As it can be noticed from the previous paragraph, this node is the core of the user interface. To implement the functionalities that we've already described, after being initialized, it subscribes to the topics **_/automatic/cmd_vel_**, **_/manual/cmd_vel_** and **_/assisted/cmd_vel_**. Moreover, it declares a publisher to the **_/cmd_vel_** topic and an action client to communicate to the node **_move_base_** the goal to be reached in the case in which the automatic mode has been selected.
