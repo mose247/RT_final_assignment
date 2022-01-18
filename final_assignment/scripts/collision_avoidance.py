@@ -131,7 +131,7 @@ def avoid_collision(regions):
 
 def main():
     # initialize the node
-    rospy.init_node('drive_assistant')
+    rospy.init_node('collision_avoidance')
 
     # define a publisher to the /assisted/cmd_vel topic
     global pub
