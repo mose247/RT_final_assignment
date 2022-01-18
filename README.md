@@ -41,3 +41,5 @@ As it can be noticed from the previous paragraph, this node is the core of the u
  - **_/assisted/cmd_vel_**
 
 Moreover, it is declared a publisher to the **_/cmd_vel_** topic and an action client to tell the node **_move_base_** the goal to be reached when the automatic mode has been selected.
+
+#### Pseudo-code:
