@@ -158,6 +158,7 @@ end function
 The real logic of the node is implemented by the utility function _avoid_collision_, which is in charge of updating the input velocity, when necessary, every time that a new LaserScan message is published on the **_/scan_** topic. Its pseudo-code is the following:
 ```
 function avoid_collision(regions)
+
   lin= get linear component from ass_vel
   ang= get angular component from ass_vel
   
