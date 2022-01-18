@@ -31,5 +31,5 @@ The idea that lays behind it is that the nodes **_move_base_**, **_teleop_** and
  - **_/manual/cmd_vel_**: on which the node **_teleop_** publishes the velocity resulting from the user's input;
  - **_/assisted/cmd_vel_**: on which the node **_collision_avoidance_** publishes the velocity resulting from the user's input, properly updated to avoid collisions (if necessary);
 
-Then, the **_user_interface_** node, that is subscribed to each of topics above, is in charcge of deciding which velocity to publish on **_/cmd_vel_** according to the driving mode selected by the user.
+Then, the **_user_interface_** node, that is subscribed to each of the topics above, is in charcge of deciding which velocity to publish on **_/cmd_vel_** according to the driving mode selected by the user.
 
