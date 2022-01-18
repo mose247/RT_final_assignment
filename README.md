@@ -26,7 +26,7 @@ The architecture of the user interface that was required is highlighted in the f
 
 ![Assignment_3-11](https://user-images.githubusercontent.com/91455159/149918889-30514938-7aa4-4f80-b46e-69c1e1144db9.jpg)
 
-The idea that lays behind it is that the nodes **_move_base_**, **_teleop_** and **_collision_avoidance_** that are responsable of setting the robot's velocity do not publish it directly on the **_/cmd_vel_** topic, which is the one used to move the robot in the simulated environment. Instead, the following intermediate topics have been defined:
+The idea that lays behind it is that the nodes **_move_base_**, **_teleop_** and **_collision_avoidance_**, that are responsable of setting the robot's velocity, do not publish it directly on the **_/cmd_vel_** topic, which is the one used to move the robot in the simulated environment. Instead, the following intermediate topics have been defined:
  - **_/automatic/cmd_vel_**: on which the node **_move_base_** publishes the velocity computed authomatically to reach an arbitrary point in the map;
  - **_/manual/cmd_vel_**: on which the node **_teleop_** publishes the velocity corresponding to the input given by user through the keyboard;
  - **_/assisted/cmd_vel_**: on which the node **_collision_avoidance_** publishes the velocity given by the user, properly updated to avoid collisions (if necessary);
