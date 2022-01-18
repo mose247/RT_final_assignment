@@ -30,5 +30,6 @@ The idea that lays behind it is that the nodes **_move_base_**, **_teleop_** and
  - **_/automatic/cmd_vel_**: on which the node **_move_base_** publishes the velocity computed authomatically to reach an arbitrary point in the map;
  - **_/manual/cmd_vel_**: on which the node **_teleop_** publishes the velocity corresponding to the input given by user through the keyboard;
  - **_/assisted/cmd_vel_**: on which the node **_collision_avoidance_** publishes the velocity given by the user, properly updated to avoid collisions (if necessary);
+
 Then, the **_user_interface_** node is in charcge of deciding which one of the three velocities to publish on the **_/cmd_vel_** topic, according to the driving mode selected by the user.
 
