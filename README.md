@@ -120,7 +120,7 @@ publish a null velocity on /cmd_vel to stop the robot
 
 
 ## collision_avoidance node
-The purpose of this node is monitoring the velocity resulting from the user's input and updating it, if necessary, in order to avoid collision with the external environment. In order to do so, after being initialized, the node subscibes to two different topics:
+The purpose of this node is monitoring the velocity resulting from the user's input and, if necessary, updating it in order to avoid collisions with the external environment. In order to do so, after being initialized, the node subscribes to the following topics:
 - **_/manual/cmd_vel_**: to get the velocity resulting from the user's input;
 - **_/scan_**: to get information about the position of the robot with respect to surrounding obstacles;
 
