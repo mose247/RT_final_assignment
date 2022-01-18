@@ -77,7 +77,7 @@ end function
 ```
 
 The logic behind the loops executed after the selection of the three driving modes is the following.
-###### automatic mode loop:
+##### automatic mode loop:
 ```
 initialize nav_cmd to navigate in the sub menu
 
