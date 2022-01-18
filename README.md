@@ -77,6 +77,6 @@ end function
 ```
 
 The logic behind the loops executed after the selection of the three driving modes is the following:
-######
+###### automatic mode loop:
 ```
 ```
