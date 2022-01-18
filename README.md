@@ -22,3 +22,4 @@ The command launches both the files _simulation_gmapping_ and _move_base_, plus 
 
 
 ## Software architecture
+![Assignment_3-11](https://user-images.githubusercontent.com/91455159/149918889-30514938-7aa4-4f80-b46e-69c1e1144db9.jpg)
