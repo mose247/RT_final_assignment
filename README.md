@@ -49,9 +49,9 @@ initialize two global variables cmd and pub
 function main()
   initialize node
   
-  sub1= define subscriber to /automatic/cmd_vel
-  sub2= define subscriber to /manual/cmd_vel
-  sub3= define subscriber to /assisted/cmd_vel
+  sub1= define subscriber to /automatic/cmd_vel that executes auto_vel_callback
+  sub2= define subscriber to /manual/cmd_vel that executes man_vel_callback
+  sub3= define subscriber to /assisted/cmd_vel that executes ass_vel_callback
   
   pub= define publisher to /cmd_vel
   
@@ -73,6 +73,17 @@ function main()
         invalid command error
       end if
   end while
+end function
+```
+
+##### callbacks:
+The callbacks executed by the subscribers are similar: they get the message that was published on the topic they refer to and pusblish it on **_/cmd_vel_**
+only when the corresponding driving mode was selected.
+```
+function callback(msg)
+  if (cmd == mode i)
+    make pub publish msg on /cmd_vel
+  end if
 end function
 ```
 
