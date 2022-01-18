@@ -76,7 +76,22 @@ function main()
 end function
 ```
 
-The logic behind the loops executed after the selection of the three driving modes is the following:
+The logic behind the loops executed after the selection of the three driving modes is the following.
 ###### automatic mode loop:
 ```
+initialize nav_cmd to navigate in the sub menu
+
+while (nav_cmd is not 'b')
+  get the coordinates of the target point via get_goal()
+  insert the coordinates in the action message
+  make the client sends the action message
+  
+  while (nav_cmd is not 'g' or 'b')
+    nav_cmd= get input from stdin
+  end while
+  
+  cancel current goal
+end while
+
+publish a null velocity on /cmd_vel to stop the robot
 ```
