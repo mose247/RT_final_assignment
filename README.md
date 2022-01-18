@@ -34,4 +34,4 @@ The idea that lays behind it is that the nodes **_move_base_**, **_teleop_** and
 Then, the **_user_interface_** node, that is subscribed to each of the topics above, is in charge of deciding which velocity to publish on **_/cmd_vel_** according to the driving mode selected by the user.
 
 
-## user-interface node
+## user_interface node
