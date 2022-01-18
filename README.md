@@ -166,43 +166,43 @@ function avoid_collision(regions)
     do nothing
     
   else if (obstacle in the front)
-    if (the user want to go straight)
+    if (the user wants to go straight)
       lin= 0
       ang= 0
     end if
     
   else if (obstacle in the front-right)
-    if (the user want to turn front-right)
+    if (the user wants to turn front-right)
       lin= 0
       ang= 0
     end if
     
   else if (obstacle in the front-left)
-    if (the user want to turn front-left)
+    if (the user wants to turn front-left)
       lin= 0
       ang= 0
     end if
     
   else if (obstacle in the front and front-right)
-    if (the user want to go straight or turn front-right)
+    if (the user wants to go straight or turn front-right)
       lin= 0
       ang= 0
     end if
     
   else if (obstacle in the front and front-left)
-    if (the user want to go straight or turn front-left)
+    if (the user wants to go straight or turn front-left)
       lin= 0
       ang= 0
     end if
     
   else if (obstacle in the front, front-right and front-left)
-    if (the user want to go straight, turn front-right or front-left)
+    if (the user wants to go straight, turn front-right or front-left)
       lin= 0
       ang= 0
     end if
     
   else if ((obstacle in the front-right and front-left)
-    if (the user want to turn front-right or front-left)
+    if (the user wants to turn front-right or front-left)
       lin= 0
       ang= 0
     end if
