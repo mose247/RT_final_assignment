@@ -125,3 +125,81 @@ The purpose of this node is monitoring the velocity resulting from the user's in
 - **_/scan_**: to get information about the position of the robot with respect to surrounding obstacles;
 
 Moreover, after having updated the input velocity, the node publishes it on the **_/assisted/cmd_vel_** topic. 
+
+#### main() pseudo-code:
+```
+initialize two global variables pub and ass_vel
+
+function main()
+  initialize node
+  
+  sub1= define subscriber to /scan that executes callback_1
+  sub2= define subscriber to /manual/cmd_vel that executes callback_2
+  
+  pub= define publisher to /assisted/cmd_vel
+  
+  spin to execute continuosly the callbacks
+end function
+```
+
+```
+function callback_1(msg)
+  regions= divide the ranges vector in 5 sections and get the minimum per each
+  execute the custom function avoid_collision(regions)
+end function
+```
+
+```
+function callback_2(msg)
+  copy the Twist message msg into the global variable ass_vel
+end function
+```
+
+```
+function avoid_collision(regions)
+  lin= get linear component from ass_vel
+  ang= get angular component from ass_vel
+  
+  if (no obstacle detected)
+    do nothing
+  else if (obstacle in the front)
+    if (the user want to go straight)
+      lin= 0
+      ang= 0
+    end if
+  else if (obstacle in the front-right)
+    if (the user want to turn front-right)
+      lin= 0
+      ang= 0
+    end if
+  else if (obstacle in the front-left)
+    if (the user want to turn front-left)
+      lin= 0
+      ang= 0
+    end if
+  else if (obstacle in the front and front-right)
+    if (the user want to go straight or turn front-right)
+      lin= 0
+      ang= 0
+    end if
+  else if (obstacle in the front and front-left)
+    if (the user want to go straight or turn front-left)
+      lin= 0
+      ang= 0
+    end if
+  else if (obstacle in the front, front-right and front-left)
+    if (the user want to go straight, turn front-right or front-left)
+      lin= 0
+      ang= 0
+    end if
+  else if ((obstacle in the front-right and front-left)
+    if (the user want to turn front-right or front-left)
+      lin= 0
+      ang= 0
+    end if
+  else
+    unknown case
+  end if
+  
+end function
+```
