@@ -49,9 +49,9 @@ initialize two global variables cmd and pub
 function main()
   initialize node
   
-  sub1= define subscriber to /automatic/cmd_vel that executes callback_1
-  sub2= define subscriber to /manual/cmd_vel that executes callback_2
-  sub3= define subscriber to /assisted/cmd_vel that executes callback_3
+  sub1= define subscriber to /automatic/cmd_vel that executes callback_1()
+  sub2= define subscriber to /manual/cmd_vel that executes callback_2()
+  sub3= define subscriber to /assisted/cmd_vel that executes callback_3()
   
   pub= define publisher to /cmd_vel
   
@@ -133,8 +133,8 @@ initialize two global variables pub and ass_vel
 function main()
   initialize node
   
-  sub1= define subscriber to /scan that executes callback_1
-  sub2= define subscriber to /manual/cmd_vel that executes callback_2
+  sub1= define subscriber to /scan that executes callback_1()
+  sub2= define subscriber to /manual/cmd_vel that executes callback_2()
   
   pub= define publisher to /assisted/cmd_vel
   
