@@ -2,7 +2,7 @@
 
 
 ## Exercise requirements
-The assignment requires to develop a software architecture to control a mobile robot inside a simulation environment in ROS. In particular, both the modules that simulate the robot and the ones used for localization, mapping and path planning are already available. Therefore, it is asked just to implement the user interface that interacts with the robot controller in order to allow the user to switch between one of the following driving modes:
+The assignment requires to develop a software architecture to control a mobile robot inside a simulation environment in ROS. In particular, both the modules that simulate the robot and the ones used for localization, mapping and path planning are already available. Therefore, it is asked to implement just the user interface that interacts with the robot controller in order to allow the user to switch between one of the following driving modes:
  1) **_Authonomous drive_**: makes the robot reach autonomously a position (x, y) in the map;
  2) **_Manual drive_**: makes the user directly drive the robot by using the keyboard;
  3) **_Assisted drive_**: makes the user directly drive the robot by using the keyboard while a collision system is running in the background to avoid crashes;
