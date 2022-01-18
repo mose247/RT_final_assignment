@@ -78,7 +78,6 @@ end function
 
 The callbacks executed by the subscribers are similar: they get the message that was published on the topic they refer to and pusblish it on **_/cmd_vel_**
 only when the corresponding driving mode was selected.
-##### callbacks:
 ```
 function callback_i(msg)
   if (cmd == mode i)
@@ -88,7 +87,6 @@ end function
 ```
 
 Moreover, the logic behind the loops executed after the selection of the three driving modes is the following.
-##### automatic mode loop:
 ```
 initialize nav_cmd to navigate in the sub menu
 
