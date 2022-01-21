@@ -128,7 +128,7 @@ def main():
     # which the teleop_twist_keyboard node publishes
     sub2= rospy.Subscriber('/manual/cmd_vel', Twist, man_vel_callback)
 
-    # define a subscriber to the /manual/cmd_vel topic, which is the one on
+    # define a subscriber to the /assisted/cmd_vel topic, which is the one on
     # which the teleop_twist_keyboard node publishes
     sub3= rospy.Subscriber('/assisted/cmd_vel', Twist, astd_vel_callback)
 
