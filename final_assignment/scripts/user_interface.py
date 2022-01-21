@@ -121,19 +121,19 @@ def main():
     global mode_cmd, pub
 
     # define a subscriber to the /automatic/cmd_vel topic, which is the one on
-    # which the move_base node
+    # which the move_base node publishes
     sub1= rospy.Subscriber('/automatic/cmd_vel', Twist, auto_vel_callback)
 
     # define a subscriber to the /manual/cmd_vel topic, which is the one on
-    # which the teleop_twist_keyboard node
+    # which the teleop_twist_keyboard node publishes
     sub2= rospy.Subscriber('/manual/cmd_vel', Twist, man_vel_callback)
 
     # define a subscriber to the /manual/cmd_vel topic, which is the one on
-    # which the teleop_twist_keyboard node
+    # which the teleop_twist_keyboard node publishes
     sub3= rospy.Subscriber('/assisted/cmd_vel', Twist, astd_vel_callback)
 
     # define a publisher on the /cmd_vel topic, which is the one read by the simulation
-    # environment to move the robot inside the map
+    # environment to move the robot inside the map 
     pub= rospy.Publisher('/cmd_vel', Twist, queue_size= 1)
 
     # define an action client called 'move_base'
